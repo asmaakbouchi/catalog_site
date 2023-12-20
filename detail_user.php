@@ -66,31 +66,37 @@ include("include/sidenav.php");
 ?>
 
         <main>
-        <div class="container-fluid px-4">
+        <div class="container-fluid px-4" style="width: 90%;">
             <h1 class="mt-4">Gestion des sites web</h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item active">Modifier un Site Web</li>
             </ol>
 
-            <form action="" method="POST" > 
-                    <div class="form-floating mb-3">
-                        <input class="form-control" id="nom" type="text" name="nom" value="<?=$nom?>"  disabled/>
-                        <label for="nom">Nom </label>
+            <form action="" method="POST" >
+                <div class="row" >
+                    <div class="col-md-6">
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="nom" type="text" name="nom" value="<?=$nom?>"  disabled/>
+                            <label for="nom">Nom </label>
+                         </div>        
+                         <div class="form-floating mb-3">
+                            <input class="form-control" id="tel" type="text" name="tel" value="<?=$tel?>" disabled/>
+                            <label for="tel">Téléphone </label>
+                        </div>
                     </div>
-                    <div class="form-floating mb-3">
-                        <input class="form-control" id="prenom" type="text" name="prenom" value="<?=$prenom?>" disabled>
-                        <label for="prenom">Prenom</label>
-                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="prenom" type="text" name="prenom" value="<?=$prenom?>" disabled>
+                            <label for="prenom">Prenom</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="email" type="text" name="email" value="<?=$email?>" disabled/>
+                            <label for="email">Email</label>
+                        </div>
 
-                    <div class="form-floating mb-3">
-                        <input class="form-control" id="tel" type="number" name="tel" value="<?=$tel?>" disabled/>
-                        <label for="tel">Téléphone </label>
                     </div>
+                </div>
 
-                    <div class="form-floating mb-3">
-                        <input class="form-control" id="email" type="text" name="email" value="<?=$email?>" disabled/>
-                        <label for="email">Email</label>
-                    </div>
                     <div class="form-floating mb-3">
                         <input class="form-control" id="roll" type="text" name="roll" value="<?=$roll_name?>" disabled/>
                         <label for="email">Rôle</label>
