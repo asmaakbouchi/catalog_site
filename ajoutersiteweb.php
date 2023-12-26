@@ -5,12 +5,14 @@ if(isset($_POST["Enregistrer"])){
     $nomsite=$_POST["nom_site"];
     $liensite=$_POST["lien_site"];
     $image_name="web.png";
+
     if(!empty($_FILES["image"]["name"])){
-        $image=$_FILES["image"]["name"];
-        $image_name=uniqid().$image;
-        move_uploaded_file($_FILES["image"]["tmp_name"],"image/".$image_name);
+        $image=$_FILES["image"]["name"]; 
+        $image_name=uniqid().$image;//"image" c'est le nom que je fais dans input et "name" pour afficher exactement le nom peut fair aussi (type pour avoir le type de fichier...)
+        move_uploaded_file($_FILES["image"]["tmp_name"],"image/".$image_name); //enregistrer l'image sous le ficher image qui est dans les document du projet
     }
     $req="insert into site_web(nom_site,lien,logo)values('$nomsite','$liensite','$image_name');";
+    
     try{
       if(mysqli_query($con,$req))
       {
@@ -26,7 +28,6 @@ if(isset($_POST["Retour"])){
     echo"<script>window.location.href='gestion_siteweb.php';</script>";  
 }
 ?>
-
 
 <?php 
 include("include/header.php");
